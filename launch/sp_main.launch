@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- Here will go our python script that calls the execute_trajectory service -->
+    <node pkg ="my_sphero_main"
+        type="main_program.py"
+        name="sphero_main_node"
+        output="screen">
+    </node>
+
+    <node pkg ="my_sphero_main"
+        type="action_server.py"
+        name="odom_action_server_node"
+        output="screen">
+    </node>
+
+    <node pkg ="my_sphero_main"
+        type="crash_dir_service_server.py"
+        name="crash_dir_service_server"
+        output="screen">
+    </node>
+
+</launch>
